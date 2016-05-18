@@ -175,10 +175,9 @@ function dhu_update_7108(&$sandbox) {
 }
 
 /**
-<<<<<<< 76bbe0a8008e39139f8dd4285031d1029b056780
  * Revert feature to redesign.
  */
-function dhu_update_7110() {
+function dhu_update_7109() {
   $modules_to_enable = array('jquery_update');
   module_enable($modules_to_enable);
 
@@ -190,29 +189,13 @@ function dhu_update_7110() {
   foreach ($modules as $module) {
     features_revert_module($module);
   }
-=======
- * Disable Browserclass module.
- */
-function dhu_update_7109(&$sandbox) {
-  module_disable(array(
-    'browserclass',
-  ));
->>>>>>> Issue #292 - Disable Browserclass module
 }
 
 /**
- * Revert feature to redesign.
+ * Disable Browserclass module.
  */
-function dhu_update_7110() {
-  $modules_to_enable = array('jquery_update');
-  module_enable($modules_to_enable);
-
-  features_include();
-  $modules = array(
-    'drupalhu_links',
-  );
-
-  foreach ($modules as $module) {
-    features_revert_module($module);
-  }
+function dhu_update_7110(&$sandbox) {
+  module_disable(array(
+    'browserclass',
+  ));
 }
